@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "Extender MCP Server": {
+      "command": "node",
+      "args": ["mcp-server.js"],
+      "env": {
+        "SUPABASE_URL": "https://fkzdyannioxbtxfozcmr.supabase.co",
+        "SUPABASE_KEY": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZremR5YW5uaW94YnR4Zm96Y21yIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDY3NTEwNDgsImV4cCI6MjA2MjMyNzA0OH0.jTlfkhxSV3q4qrI6xVwOGaHsG8dS1MoVAZhKPvYsy7c"
+      }
+    }
+  }
+}
