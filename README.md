@@ -1,21 +1,29 @@
-# Extender Travel Assistant
+# Extender MCP Server
 
-An MCP (Model Context Protocol) server with specialized tools for planning and organizing trips. This server provides Claude and other AI assistants with the ability to search for flights, find accommodations, plan transit to/from airports, and manage your travel calendar.
+An MCP (Model Context Protocol) server with specialized tools for planning and organizing trips, as well as managing tasks and projects. This server provides Claude and other AI assistants with the ability to search for flights, find accommodations, plan transit to/from airports, manage your travel calendar, and keep track of your tasks and projects.
 
 ## Features
 
+### Travel Tools
 - **Route Memory Tool**: Store and retrieve complex travel routes (e.g., Dublin → Paris → Valence connections)
 - **Flight Search Tool**: Search for flights across multiple platforms (Kayak.ie, EDreams)
 - **Dublin Transit Tool**: Plan journeys to and from Dublin Airport, optimized for your flight times
 - **Accommodation Search Tool**: Find places to stay on Booking.com, Airbnb, and more
 - **Calendar Integration Tool**: Add trips and reminders to Google Calendar, including check-in alerts
 
+### Task Management Tools
+- **Get Projects Tool**: Retrieve and filter projects from your database
+- **Get Tasks Tool**: Retrieve and filter tasks with various criteria
+- **Get Persons Tool**: Search and retrieve person records
+- **Create Task Tool**: Add new tasks to your projects
+- **Update Task Tool**: Modify existing tasks with new details
+
 ## Getting Started
 
 ### Prerequisites
 
 - Node.js v20 or higher
-- A Supabase account for storing preferences
+- A Supabase account for storing preferences, tasks, and projects
 - Claude Desktop (or another MCP-compatible AI assistant)
 
 ### Installation
@@ -36,6 +44,11 @@ An MCP (Model Context Protocol) server with specialized tools for planning and o
    npm start
    ```
 
+4. In Claude Desktop, connect to the MCP server:
+   - Go to Settings > MCP Tools
+   - Add a new MCP Server
+   - Connect to the running server (typically running on standard I/O)
+
 ## Usage Examples
 
 ### Planning a Trip
@@ -52,13 +65,29 @@ Claude can then:
 3. Plan your transit to/from Dublin Airport
 4. Create calendar events with automatic reminders
 
-### Example Queries
+### Example Travel Queries
 
 - "Find flights from Dublin to Paris for May 25th to May 30th"
 - "What are the best transit options to Dublin Airport for a 10 AM flight next Thursday?"
 - "Search for accommodations in Berlin from June 15-20 with a maximum price of €200 per night"
 - "Remember my route from Dublin to Valence via Paris for future trips"
 - "Add my Paris trip to my calendar with check-in reminders"
+
+### Managing Tasks and Projects
+
+Ask Claude to help manage your tasks and projects:
+- Create new tasks and assign them to projects
+- Get lists of pending tasks
+- Update task statuses
+- Find tasks assigned to specific people
+
+### Example Task Management Queries
+
+- "Create a new task called 'Prepare presentation' for the Marketing project due next Friday"
+- "Show me all my incomplete tasks for the current week"
+- "Update the status of the website redesign task to 'In Progress'"
+- "List all projects with an Active status"
+- "Find all tasks assigned to Sarah"
 
 ## Configuration
 
@@ -67,7 +96,7 @@ The Supabase connection details are stored in each tool file. To use your own Su
 1. Update the `supabaseUrl` and `supabaseKey` variables in each tool file
 2. Create the necessary database tables (setup functions are included in each tool)
 
-## Tools
+## Tools Details
 
 ### Route Memory Tool
 
@@ -116,6 +145,17 @@ Creates and manages travel-related calendar events.
 - Include transit details in event descriptions
 - Set up automatic reminders for check-ins
 - Customize reminder timing based on airline policies
+
+### Task Management Tools
+
+A set of tools for managing projects and tasks.
+
+**Capabilities:**
+- Create and manage projects
+- Create, retrieve, and update tasks
+- Filter tasks by status, project, completion, and next action status
+- Manage person records for task assignment
+- Set priorities, due dates, and contexts for tasks
 
 ## License
 
