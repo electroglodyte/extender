@@ -1,0 +1,23 @@
+{
+  "name": "extender-travel-assistant",
+  "version": "1.0.0",
+  "description": "MCP server with travel planning tools",
+  "main": "mcp-server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node mcp-server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Armin Prediger",
+  "license": "MIT",
+  "dependencies": {
+    "@supabase/supabase-js": "^2.39.7",
+    "axios": "^1.6.7",
+    "cheerio": "^1.0.0-rc.12",
+    "mcp-framework": "^0.3.0",
+    "zod": "^3.22.4"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}
